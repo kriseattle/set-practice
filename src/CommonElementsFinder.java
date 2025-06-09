@@ -1,4 +1,5 @@
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * The CommonElementsFinder class provides a method for finding common elements
@@ -15,7 +16,26 @@ public class CommonElementsFinder {
      */
     public static Set<Integer> findCommonElements(int[] array1, int[] array2) {
         // TODO
-        return null;
+
+        Set<Integer> set1 = new TreeSet<>();
+            for (int num : array1) {
+                set1.add(num);
+            }
+
+
+        Set<Integer> set2 = new TreeSet<>();
+        for (int num : array2) {
+                set2.add(num);
+            }
+
+        Set<Integer> commonNumSet = new TreeSet<>();
+        for (int num : set1) {
+            if (set2.contains(num)) {
+                commonNumSet.add(num);
+            }
+        }
+
+        return commonNumSet;
     }
 
 
